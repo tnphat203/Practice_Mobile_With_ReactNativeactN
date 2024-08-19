@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    var D_Score_1, D_Score_2, D_Score_3, K_Score_1, K_Score_2, K_Score_3, D_Avg, K_Avg;
+    console.log("Data 1");
+    D_Score_1 = 96;
+    D_Score_2 = 108;
+    D_Score_3 = 89;
+    K_Score_1 = 88;
+    K_Score_2 = 91;
+    K_Score_3 = 110;
+    D_Avg = (D_Score_1 + D_Score_2 + D_Score_3) / 3;
+    K_Avg = (K_Score_1 + K_Score_2 + K_Score_3) / 3;
+    console.log(`Điểm trung bình của đội Dophins: ${D_Avg}`);
+    console.log(`Điểm trung bình của đội Koalas: ${K_Avg}`);
+
+    if (D_Avg > K_Avg) {
+        console.log(`Đội Dophins thắng với điểm trung bình là ${D_Avg}`);
+    } else if (D_Avg < K_Avg) {
+        console.log(`Đội Koalas thắng với điểm trung bình là ${K_Avg}`);
+    } else {
+        console.log(`Hòa với điểm trung bình là ${D_Avg}`);
+    }
+
+    console.log("Bonus 1");
+    D_Score_1 = 97;
+    D_Score_2 = 112;
+    D_Score_3 = 101;
+    K_Score_1 = 109;
+    K_Score_2 = 95;
+    K_Score_3 = 123;
+    D_Avg = (D_Score_1 + D_Score_2 + D_Score_3) / 3;
+    K_Avg = (K_Score_1 + K_Score_2 + K_Score_3) / 3;
+    if (D_Avg >= 100 && K_Avg >= 100) {
+        if (D_Avg > K_Avg) {
+            console.log(`Đội Dophins thắng với điểm trung bình là ${D_Avg}`);
+        } else if (D_Avg < K_Avg) {
+            console.log(`Đội Koalas thắng với điểm trung bình là ${K_Avg}`);
+        } else {
+            console.log(`Hòa với điểm trung bình là ${D_Avg}`);
+        }
+    }
+    console.log("Bonus 2");
+    D_Score_1 = 97;
+    D_Score_2 = 112;
+    D_Score_3 = 101;
+    K_Score_1 = 109;
+    K_Score_2 = 95;
+    K_Score_3 = 106;
+    D_Avg = (D_Score_1 + D_Score_2 + D_Score_3) / 3;
+    K_Avg = (K_Score_1 + K_Score_2 + K_Score_3) / 3;
+    if (D_Avg >= 100 && K_Avg >= 100) {
+        if (D_Avg > K_Avg) {
+            console.log(`Đội Dophins thắng với điểm trung bình là ${D_Avg}`);
+        } else if (D_Avg < K_Avg) {
+            console.log(`Đội Koalas thắng với điểm trung bình là ${K_Avg}`);
+        } else {
+            console.log(`Hòa với điểm trung bình là ${D_Avg}`);
+        }
+    } else if (D_Avg < 100 && K_Avg >= 100) {
+        console.log(`Đội Koalas thắng với điểm trung bình là ${K_Avg}`);
+    } else if (D_Avg >= 100 && K_Avg < 100) {
+        console.log(`Đội Dophins thắng với điểm trung bình là ${D_Avg}`);
+    } else {
+        console.log(`Không có đội nào thắng!`);
+    }
+</script>
+
+</html>
