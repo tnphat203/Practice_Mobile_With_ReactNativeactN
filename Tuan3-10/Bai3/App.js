@@ -1,14 +1,14 @@
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
-export default function App() {
+const stackNavigation = createNativeStackNavigator();
+
+function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          alignItems: "flex-start",
-        }}
-      >
+      <View>
         <View>
           <View
             style={{
@@ -186,43 +186,199 @@ export default function App() {
               paddingLeft: 100,
               gap: 80,
             }}
+            onPress={() => navigation.navigate("ChooseColorPhone")}
           >
             <Text>4 MÀU-CHỌN MÀU</Text>
             <Image source={require("./assets/Vector.png")} />
           </TouchableOpacity>
         </View>
       </View>
-      <View>
-        <TouchableOpacity
+      <TouchableOpacity
+        style={{
+          height: 40,
+          width: 332,
+          backgroundColor: "#FF0000",
+          borderRadius: 10,
+          justifyContent: "center",
+          alignItems: "center",
+          marginLeft: 45,
+          marginTop: 10,
+        }}
+      >
+        <Text
           style={{
-            height: 40,
-            width: 332,
-            backgroundColor: "#FF0000",
-            borderRadius: 10,
-            justifyContent: "center",
-            alignItems: "center",
-            marginLeft: 45,
+            fontSize: 20,
+            color: "#F9F2F2",
+            fontWeight: 700,
+          }}
+        >
+          CHỌN MUA
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+function ChooseColor({ navigation }) {
+  return (
+    <View
+      style={{
+        width: "100%",
+        flex: 1,
+        gap: 20,
+      }}
+    >
+      <View
+        style={{
+          flexDirection: "row",
+          gap: 10,
+        }}
+      >
+        <View>
+          <Image
+            source={require("./assets/vs_blue.png")}
+            style={{
+              height: 132,
+              width: 112,
+            }}
+          />
+        </View>
+        <View
+          style={{
+            width: 250,
             marginTop: 10,
           }}
         >
-          <Text
+          <View>
+            <Text
+              style={{
+                fontSize: 15,
+                fontWeight: 400,
+              }}
+            >
+              Điện thoại Vsmart Joy 3
+            </Text>
+            <Text
+              style={{
+                fontSize: 15,
+                fontWeight: 400,
+              }}
+            >
+              Hàng chính hãng
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={{
+          justifyContent: "space-between",
+          backgroundColor: "#C4C4C4",
+          flex: 1,
+        }}
+      >
+        <View>
+          <View>
+            <Text
+              style={{
+                marginLeft: 15,
+                marginTop: 10,
+                marginBottom: 10,
+                fontSize: 18,
+                fontWeight: 400,
+              }}
+            >
+              Chọn một màu bên dưới:
+            </Text>
+          </View>
+          <View
             style={{
-              fontSize: 20,
-              color: "#F9F2F2",
-              fontWeight: 700,
+              alignItems: "center",
+              gap: 10,
             }}
           >
-            CHỌN MUA
-          </Text>
-        </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                height: 80,
+                width: 85,
+                backgroundColor: "#C5F1FB",
+              }}
+            ></TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                height: 80,
+                width: 85,
+                backgroundColor: "#F30D0D",
+              }}
+            ></TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                height: 80,
+                width: 85,
+                backgroundColor: "#000000",
+              }}
+            ></TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                height: 80,
+                width: 85,
+                backgroundColor: "#234896",
+              }}
+            ></TouchableOpacity>
+          </View>
+        </View>
+        <View
+          style={{
+            width: "100%",
+            alignItems: "center",
+            marginBottom: 20,
+          }}
+        >
+          <TouchableOpacity
+            style={{
+              backgroundColor: "#1952E294",
+              height: 45,
+              width: 326,
+              border: 1,
+              borderRadius: 10,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 20,
+                color: "#F9F2F2",
+                fontWeight: 700,
+              }}
+            >
+              XONG
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
 }
 
+export default function App() {
+  return (
+    <NavigationContainer>
+      <stackNavigation.Navigator initialRouteName="Home">
+        <stackNavigation.Screen name="Home" component={HomeScreen} />
+        <stackNavigation.Screen
+          name="ChooseColorPhone"
+          component={ChooseColor}
+        />
+      </stackNavigation.Navigator>
+    </NavigationContainer>
+  );
+}
+
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     width: "100%",
-    flexDirection: "column",
+    justifyContent: "space-between",
+    paddingBottom: 30,
   },
 });
