@@ -8,13 +8,25 @@ const stackNavigation = createNativeStackNavigator();
 function APIScreen1({ navigation }) {
   return (
     <View style={styles.container}>
-      <View>
+      <View style = {{
+            alignItems: 'center',
+      }}>
         <View style = {{
           width: '100%',
-          alignItems: 'center',
+
           paddingTop: 82,
         }}>
           <Image source={require('./assets/Note.png')} style={{width: 271, height: 271}} />
+        </View>
+        <View style = {{
+          width: 200
+        }}>
+          <Text style={{
+            fontSize: 24,
+            textAlign: 'center',
+            fontWeight: 'bold',
+            color: '#8353E2', 
+          }}>MANAGE YOUR TASK</Text>
         </View>
       </View>
       <View>
@@ -57,5 +69,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
