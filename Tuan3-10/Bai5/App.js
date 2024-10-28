@@ -75,7 +75,7 @@ function APIScreen1({ navigation }) {
           width: 190,
           height: 44,
           borderRadius: 12,
-        }} >
+        }} onPress=  {()=> navigation.navigate("APIScreen2")}>
           <Text style = {{
             color: "white",
             fontSize: 16,
