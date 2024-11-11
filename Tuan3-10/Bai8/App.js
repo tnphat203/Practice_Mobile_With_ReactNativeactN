@@ -54,7 +54,7 @@ function TrangChu({ navigation }) {
             fontSize: 20,
             fontWeight: 'bold',
             color: 'white'
-          }}>Get Stared</Text>
+          }}>Get Started</Text>
         </TouchableOpacity>
       </View>
     </View>
